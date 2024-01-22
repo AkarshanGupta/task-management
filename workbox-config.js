@@ -6,4 +6,10 @@ module.exports = {
   swDest: "dist/browser/service-worker.js",
   clientsClaim: true,
   skipWaiting: true,
+  runtimeCaching: [
+    {
+      urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+      handler: 'CacheFirst',
+    },
+  ],
 };
